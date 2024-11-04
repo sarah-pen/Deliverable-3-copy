@@ -190,8 +190,8 @@ def extract_meet_id(url):
 def select_random_photos(folder_path, num_photos=25):
     # List all files in the folder
     # print(f"Checking {folder_path}")
-    if not os.path.exists(folder_path):
-        return ""
+    # if not os.path.exists(folder_path):
+    #     return ""
     
     all_files = os.listdir(folder_path)
 
