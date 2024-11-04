@@ -104,6 +104,7 @@ with open("meets/37th_Early_Bird_Open_Mens_5000_Meters_HS_Open_5K_24.csv", mode=
         Follow us on Instagram <a href = "https://www.instagram.com/a2skylinexc/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i>  </a> 
 
         </footer>
+        <script src="js/imagePlaceholder.js"></script>
 
     </body>
     </html>
