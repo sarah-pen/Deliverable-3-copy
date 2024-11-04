@@ -1,0 +1,464 @@
+/* =====================================================
+        Mobile Styling
+===================================================== */
+
+@media (min-width: 320px) {
+
+    /* ==========================================
+            General
+    ========================================== */
+
+    /* --- Default Font --- */
+    * {
+        font-family: "Inter", sans-serif;
+    }
+
+    /* --- Default Text Size --- */
+    body {
+        font-size: 1.1rem;
+    }
+
+    /* --- Color Palette --- */
+    :root {
+        --primary: #5097c6;
+        --secondary: #bddff6;
+        --tertiary: #2d6e9a;
+        --dark: #0e3e5e;
+    }
+
+    /* --- Content Margins --- */
+    main {
+        margin: 30px 32px;
+    }
+
+    /* --- Section Top/Bottom Margins --- */
+    section {
+        margin: 30px 0px;
+    }
+
+
+    /* ===========================================
+            Headings
+    =========================================== */
+
+    /* --- Heading 1 --- */
+    h1, h1 a {
+        text-decoration: none;
+        font-size: 1.6rem;
+        color: black;
+    }
+
+    h1 a:hover, h3 a:hover {
+        text-decoration: underline;
+    }
+
+    /* --- Heading 2 --- */
+    h2 {
+        font-size: 1.4rem;
+        margin: 20px 0px;
+        color: var(--dark);
+    }
+
+    /* --- Heading 3 --- */
+    h3, h3 a {
+        font-size: 1.3rem;
+        color: black;
+        margin-bottom: 16px;
+        text-decoration: none;
+    }
+
+    /* --- Heading 4 --- */
+    h4 {
+        font-size: 1.1rem;
+        color: var(--dark);
+    }
+
+
+    /* ===========================================
+            Header Banner
+    =========================================== */
+    
+    header {
+        width: 100%;
+        height: 100px;
+        overflow: hidden;
+    }
+
+    header img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        opacity: 0.7;
+    }
+
+    header div {
+        position: absolute;
+        top: 40px;
+        left: 24px;
+    }
+
+    header h1 {
+        color: var(--dark);
+    }
+
+    /* ===========================================
+            Navigation
+    =========================================== */
+
+    /* --- Container --- */
+    nav {
+        background-color: var(--primary);
+    }
+
+    /* --- Nav List --- */
+    nav ul {
+        list-style-type: none; 
+        padding: 0;
+        margin: 0;
+    }
+
+    /* --- Nav Item --- */
+    nav ul li {
+        border-bottom: 1px solid black; 
+        padding: 15px 0; 
+    }
+
+    /* --- Nav Item on Hover --- */
+    nav ul li:hover {
+        background-color: var(--tertiary);
+        font-weight: 700;
+    }
+
+    /* --- Remove Border from Last Nav Item --- */
+    nav ul li:last-child {
+        border-bottom: none; 
+    }
+
+    /* --- Nav Item Text --- */
+    nav ul li a {
+        text-decoration: none; 
+        color: black; 
+        display: block; 
+        margin-left: 32px;
+    }
+
+    /* ===========================================
+            Skip to Content
+    =========================================== */
+
+    /* --- Hide Skip Button --- */
+    #skip {
+        position: absolute;
+        top: -500px;
+    }
+
+    /* --- Show Skip Button on Focus --- */
+    #skip:focus {
+        position: absolute;
+        top: 10px;
+    }
+
+
+    /* ===========================================
+            Homepage Race Highlight
+    =========================================== */
+
+    /*  */
+    #highlight {
+        background-color: var(--secondary);
+        border: solid 1px var(--tertiary);
+        border-radius: 15px;
+        padding: 16px;
+    }
+
+    /* --- Homepage Highlight Image --- */
+    #highlight img {
+        width: 100%;
+    }
+
+    /* --- Highlight Title --- */
+    #highlight h2 {
+        margin-top: 5px;
+    }
+
+    /* --- Race Date --- */
+    #highlight p:first-of-type {
+        display: block;
+        border: solid 1px var(--primary);
+        width:fit-content;
+        padding: 5px 10px;
+        border-radius: 50px;
+    }
+
+
+    /* ===========================================
+            Team Results Table
+    =========================================== */
+
+    /* --- Overall Table --- */
+    #team-results table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    /* --- Heading and Data Cells --- */
+    #team-results th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* --- Heading Cells --- */
+    #team-results th {
+        background-color: var(--tertiary);
+        color: white;
+    }
+
+    /* --- Alternate Team Results Row Colors --- */
+    #team-results tr:nth-child(2n), #all-meets tr:nth-child(2n) {
+        background-color: var(--secondary);
+    }
+
+
+    /* ===========================================
+            Athlete Result Card
+    =========================================== */
+
+    /* --- Container --- */
+    .athlete-result {
+        justify-items: left;
+        background-color: var(--secondary);
+        padding: 20px;
+        border: solid 2px var(--dark);
+        border-radius: 10px;
+        margin-bottom: 20px;
+
+        /* Animation Start */
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    /* --- Athlete Data Text --- */
+    .athlete-result p {
+        margin: 5px 0;
+        color: #555;
+    }
+
+    /* --- Athlete Data Container */
+    #athlete-data {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 75vw;
+    }
+
+    /* --- Animation End */
+    .athlete-result.fade-in {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Reset offset */
+    }
+
+
+    /* ===========================================
+            All Meets Table 
+    =========================================== */
+
+    /* --- All Meets Container --- */
+    #meets-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+
+    /* --- Overall Table --- */
+    #all-meets {
+        width: 100%;
+        min-width: 460px; /* Set a min-width if necessary */
+        border-collapse: collapse;
+    }
+
+    /* --- Heading and Data Cells --- */
+    #all-meets th, td {
+        padding: 18px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* --- Heading Cells --- */
+    #all-meets th {
+        background-color: var(--tertiary);
+        color: white;
+    }
+
+    /* --- Links in All Meets Table --- */
+    #all-meets a {
+        text-decoration: none;
+        color: black;
+    }
+
+    /* --- Links in All Meets Table on Hover --- */
+    #all-meets a:hover {
+        text-decoration: underline;
+    }
+
+    /* --- Initial Hidden State --- */
+    .fade-in-row {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    /* --- Visible State --- */
+    .fade-in-row.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+
+    /* ===========================================
+            Race Summary
+    =========================================== */
+
+    /* --- Slide In From Left --- */
+    @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* --- Summary Animation --- */
+    .summary {
+        opacity: 0; 
+        animation: slideInLeft 0.8s ease forwards;
+        animation-delay: 0.15s;
+    }
+
+
+    /* ===========================================
+            Gallery 
+    =========================================== */
+
+    /* --- Gallery Container --- */
+    #gallery {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    /* --- Gallery Heading --- */
+    #gallery h2 {
+        grid-column: span 2;
+    }
+
+    /* --- Gallery Images --- */
+    #gallery img {
+        width: 40vw;
+        margin-bottom: 20px;
+    }
+
+    /* --- Initial Hidden State --- */
+    #gallery img {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    /* --- Visible State --- */
+    #gallery img.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+
+    /* ===========================================
+            Footer 
+    =========================================== */
+
+    /* --- Container --- */
+    footer {
+        background-color: var(--tertiary);
+        color: white;
+        text-align: center;
+        padding: 40px;
+        margin-top: 30px;
+    }
+
+    /* --- Text --- */
+    footer p {
+        margin: 0;
+        padding-bottom: 10px;
+    }
+
+    /* --- Address --- */
+    footer address {
+        font-style: normal;
+        line-height: 1.5;
+    }
+
+    /* --- Link --- */
+    footer a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    /* --- Link on Hover --- */
+    footer a:hover {
+        color: #dff0d8;
+    }
+}
+
+
+/* =====================================================
+        Dark Mode
+===================================================== */
+
+@media (prefers-color-scheme: dark) {
+    /* Dark mode styles */
+    :root {
+        --primary: #1b6393; 
+        --secondary: #092756; 
+        --tertiary: #5f99bf; 
+        --light: #c2def0;
+        --background-color: #1f2937; 
+    }
+}
+
+
+/* =====================================================
+        Reduced Motion
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    /* Cancel animations for users who prefer reduced motion */
+
+    /* --- Summary Section Animation --- */
+    .summary {
+        animation: none; /* Remove animation */
+        opacity: 1; /* Ensure it's visible */
+    }
+
+    /* --- Gallery Images --- */
+    #gallery img {
+        opacity: 1; /* Ensure they are visible */
+        transform: translateY(0); /* Reset position */
+        transition: none; /* Remove transition */
+    }
+
+    /* --- Fade-In Animation for Table Rows --- */
+    .fade-in-row {
+        opacity: 1; /* Ensure they are visible */
+        transform: translateY(0); /* Reset position */
+        transition: none; /* Remove transition */
+    }
+
+    .athlete-result.fade-in {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Reset offset */
+    }
+}
