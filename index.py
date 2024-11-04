@@ -29,8 +29,8 @@ with open("meets/37th_Early_Bird_Open_Mens_5000_Meters_HS_Open_5K_24.csv", mode=
     def select_random_photo():
         meet_id = extract_meet_id(link_url)
         path = f"images/meets/{meet_id}"
-        if not os.path.exists(path):
-            return ""
+        # if not os.path.exists(path):
+        #     return ""
         all_files = os.listdir(path)
 
         # Filter out non-image files if necessary (assuming .jpg, .png, etc.)
